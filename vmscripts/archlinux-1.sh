@@ -8,3 +8,6 @@ echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers
 curl http://python-distribute.org/distribute_setup.py | python2
 curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
 pacman -S --noconfirm git
+
+useradd -m -g sudo matt
+passwd matt
