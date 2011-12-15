@@ -6,12 +6,13 @@ die () {
 
 [ "$#" -eq 1 ] || die "1 argument required, $# provided"
 
-pacman -Syu
+pacman -Syu --noconfirm
 pacman -S --noconfirm sudo openssh python2 vim curl base-devel openssl
+pacman -S --noconfirm git
 echo "alias vi='vim'" >> .bashrc
 
 echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers
-pacman -S --noconfirm git
+
 
 cp /etc/rc.conf /etc/rc.conf.bkup
 sed -e 's/\(DAEMONS=(\)\(.*\))/\1\2 sshd)/' > /etc/rc.conf
