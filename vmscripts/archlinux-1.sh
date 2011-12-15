@@ -13,10 +13,8 @@ echo "alias vi='vim'" >> .bashrc
 
 echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers
 
-
 cp /etc/rc.conf /etc/rc.conf.bkup
-sed -e 's/\(DAEMONS=(\)\(.*\))/\1\2 sshd)/' > /etc/rc.conf
-rc.d start sshd
+sed -e 's/\(DAEMONS=(\)\(.*\))/\1\2 sshd)/' /etc/rc.conf > /etc/rc.conf
 
 groupadd sudo
 useradd -m -g sudo %1
