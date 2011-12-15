@@ -14,11 +14,11 @@ echo "alias vi='vim'" >> .bashrc
 echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers
 
 cp /etc/rc.conf /etc/rc.conf.bkup
-sed -e 's/\(DAEMONS=(\)\(.*\))/\1\2 sshd)/' /etc/rc.conf > /etc/rc.conf
+sed -e 's/\(DAEMONS=(\)\(.*\))/\1\2 sshd)/' /etc/rc.conf.bkup > /etc/rc.conf
 
 groupadd sudo
 useradd -m -g sudo %1
 passwd %1
 
 wget -O /home/%1/usersetup.sh https://raw.github.com/thectrain/vmscripts/master/vmscripts/archlinux-2.sh
-logout
+exit
