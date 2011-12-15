@@ -21,4 +21,3 @@ useradd -m -g sudo $1
 passwd $1
 
 wget -O /home/$1/usersetup.sh https://raw.github.com/thectrain/vmscripts/master/vmscripts/archlinux-2.sh
-exit
