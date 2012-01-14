@@ -7,7 +7,7 @@ die () {
 [ "$#" -eq 1 ] || die "1 argument required, $# provided"
 
 pacman -Syu --noconfirm
-pacman -S --noconfirm sudo openssh python2 vim curl base-devel openssl
+pacman -S --noconfirm sudo python2 vim curl base-devel openssl
 pacman -S --noconfirm git
 echo "alias vi='vim'" >> .bashrc
 
